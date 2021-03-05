@@ -102,7 +102,7 @@ class HelloViewSet(viewsets.ViewSet):
         return Response({'method': 'DELETE'})
 
 
-class UserProfileViewSer(viewsets.ModelViewSet):
+class UserProfileViewSet(viewsets.ModelViewSet):
     """Handle creating and updating profiles"""
     serializer_class = serializers.UserProfileSerializer
     queryset = models.UserProfile.objects.all()
@@ -112,6 +112,6 @@ class UserProfileViewSer(viewsets.ModelViewSet):
     search_fields = ('name', 'email')
 
 
-class USerLoginApiView(ObtainAuthToken):
+class UserLoginApiView(ObtainAuthToken):
     """Handle creating user authenticatoin tokens"""
     renderer_classes = api_settings.DEFAULT_RENDERER_CLASSES
